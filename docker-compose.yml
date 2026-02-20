@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  frontend:
+    build: .
+    image: frontend-cw:local
+    ports:
+      - "8080:80"
+    environment:
+      - API_BASE=${API_BASE:-http://localhost:8787}
+    restart: unless-stopped
